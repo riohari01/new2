@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit-icons.min.js"></script>
+    <title>first project</title>
+    <style>
+        .cs-container:not(.uk-navbar-transparent) {
+    background: transparent
+}
+.cs-btn{
+    height: fit-content;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+    padding-right: 50px;
+    margin-top: 7%;
+   
+}
+.cs-width{
+    text-align: center;
+    
+}
+.as-height{
+    height: 1000px;
+}
+@media (max-width:769px) {
+    .cs-top{
+        display: none;
+    }
+    
+}
+.uk-input{
+    width: 250px;
+    background-color: white !important;
+    color: tomato !important;
+    
+}
+.uk-input::placeholder{
+    color: black !important;
+}
+.cs-li li a {
+    color: white !important;
+}
+  .cs-top{
+      margin-top: 6% ;
+  }  
+  .shift{
+      margin-top: 25%;
+  }
+  .space{
+      margin-top: 5%;
+    
+  }
+  .pad{
+    padding: 50px;
+  }
+  .hover:hover{
+      background-color: #d82a4e;
+      color: whitesmoke;
+  }
+  .sent{
+    background-color: #d82a4e;
+    color: whitesmoke;
+    margin-top: 5%;
+  } 
+  .merge{
+    height: 170px;
+    margin-top: 5%;
+  }
+  .expand{
+      background-color: whitesmoke;
+      
+  }
+  .corner{
+    background-color: #d82a4e;
+    color: whitesmoke;
+    padding:10px;
+    margin: 10px;
+
+  }
+  .cs-gd>* {
+   
+
+      padding: 0px;
+  }
+  .cs-input{
+      border:1px solid rgb(255, 253, 253) !important;
+        background-color: rgb(236, 236, 236) !important;
+        width:700px !important;
+  }
+  .as-btn{
+      background-color: black;
+      color: whitesmoke;
+  }
+  .display{
+      display: inline-block;
+  }
+  .cs-input::placeholder{
+      opacity: .5 !important;
+  }
+  @media (max-width:769px) {
+    .such{
+        display: none;
+
+    }
+  }
+ .uk-hr{
+    border-top: 3px solid #d90909;
+ }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="uk-position-relative">
+            <div class="uk-height-large as-height  uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://preview.colorlib.com/theme/webuni/img/bg.jpg.webp" width="1800" height="1200" alt="" uk-img>
+                <div class="uk-card  uk-width-2xlarge cs-width uk-card-body">
+                    <h1>Get The Best Free Online Courses</h1><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                <form class="uk-grid-small shift" uk-grid>
+                    <div class="uk-width-1-3@s">
+                        <input class="uk-input" type="text" placeholder="Name">
+                    </div>
+                    <div class="uk-width-1-3@s">
+                        <input class="uk-input" type="text" placeholder="Email">
+                    </div>
+                    <div class="uk-width-1-3@s">
+                        <button class="uk-button  uk-button-danger" >Sign Up Now</button>
+                    </div>
+                              
+                  
+                    
+                </form>
+                </div>
+
+  
+                <div class="uk-position-top cs-top">
+                    <nav class="uk-container cs-container" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <ul class="uk-navbar-nav ">
+                                <li><a href="#">
+                                    <img src="data:image/webp;base64,UklGRoAEAABXRUJQVlA4THQEAAAvh0ALEG9hpm0bEyz/e0h2hgJBtk39NUdwghNk2xR40ic5QbZNFe4POYQn/H8U12CxBQVkW9veJNYflN5BECmxO/3+7898/x/M7DnbBxH9hyBJbtxmYDsJfWgAQpDzBfrFyLMsK+lfiE8TX0kcxykzeSrEgkEiyqTrvH2lVLZG5w1C8vgGj3d6IY4mrolSymMmgVKqMAKpUopVolCQpkuOEGKZMb/XKT2lVEpkSTvkhSCKlFIb+gtArgFT2WCupWdRUfHfIFe2oudEpkcSaWu88m9Avq0JIzBhrQq7FNK/wsuRiJ3nGwV4K3qUCnaGR5avJM/d8/McEWQPDwoq1CKNpZyNgo8KebhRplJRYSMNjM42cQIYfNLP2xkMHj+WP6AbQ6kWJs8t09jyDi1DJUQsIvn4pTM+TqAGm2OhgHNA6ENPenVujOC+VUbB9yHVUAJFFCyWjngcpXi3QIGcMQSrRgQdyg6zSaFjPHYDnut+kmWRB2VxgD0uNlKh+yBTS3eoAo4hlJlKc4wMkJqjAN3MHZczE5BhQ7IgQYEXI1E4R0s4ivDhTMwX7lwtdMX1m+gNFb5txMKESPGPgnifpHAUy/DyUcwXdw/dlCNuoHNhJ62FUhhdAbwEi1Fwm1C49AnVSpB0zdQ5vcwJp8RjBXKGMDpDdnLGfL9984wvxBZ87HPcZyfZlW/0CiyZvq0kww6ElAsjkbAWLVlqllgPVOsG+XwQkZzomytoi7lu4OM20HAZTCj3sMTu4CM14LszErCHywlKFNAjGT/miu8cK+Bj5Oto+fOTabhAON83cHllEhGaELEuCVaSCBaZ4t1zxtGEp8E3WlzJDfzF8vdAL5bSK5Q8t8pUYlOS2FCBmNnx/P5D3++nI/7tCJ6jcH3LFRzUK8XibEWJoODdCjZw+RW64+d8tMeVHELCpdMiIU7pbQ4KgVFgbhuzXwUVyUaJLfNlv5++nZJAyrksUQhSuQdFj2IfNqtg+LFiIW8UvZ9s9y9ygzyI/RUS/LaVEvUL4lCk7N974FcYotJlzDFwQqyUwK1hv2xBh0OZz20s8XHDF5zvn0SOcBlFBv/BrtPhnbPiu+//V9Fq+u0YRgdqnTbRv/RcvYrZyNqTGodfBrzc0xPVS++eg9ZTTe0EBdf90o/7UetWAmSM3ljTOEx6rg/oVZtNanW36IGonbXuBWjcUz1pfSDaaz01g9b6VYbnyjjR0FGnW9JzQ6PujYkAyAxzXU0Tjbqr5gW8hIep2umm1j21y47TLC3N43Nh3+iG+t7BQwUVXRrjsPSkO6LxQNTPwvJoZCq9I6p1Y9IYZvASaIiWbj8SUX8QlifaLZU5ioHIAY2G6HqtF0NLNPZE3Sw/tNTo2gh0Y4/C3WxZnrsD6M/CH9PQY0b1U2monTzs8ONaEF+P8LCePTQICXTLTlfcZD/BSxwsD7PZtU6/grBspWkYZrmZO+lhNMvVNHSHCjhU9WrYUMK39Vof9uMr8LdZqCa9MIS38eWGva06aD231K2ffwQ=">
+                                </a></li>
+                            </ul>                  
+        
+                        </div>
+                        <div class="uk-navbar-right">
+                            <ul class="uk-navbar-nav cs-li">
+                                <li><a href="#">Home</a></li>
+                                <li> <a href="#">About us</a></li>
+                                <li><a href="#">Courses</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <div>
+                                    <button class="uk-button cs-btn uk-button-danger">Log in</button>     
+                                    </div>
+                                                  
+                                
+                            </ul>
+                            
+            
+                           
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+                
+        </div>
+        
+        
+    </div>
+    <div class="uk-container space">
+        <div class="uk-text-center pad">
+            <h1>Our Course Categories</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+        </div>
+
+        <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default  ">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/1.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title ">IT Development</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">120 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default ">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/2.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title">Web Design</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">70 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default ">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/3.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title">Illustration & Drawing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">55 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/4.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title">Social Media</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">40 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/5.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title">Photoshop</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">220 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default ">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://preview.colorlib.com/theme/webuni/img/categories/6.jpg.webp" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body hover">
+                                <h3 class="uk-card-title">Cryptocurrencies</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                <h4 class="uk-card-title  uk-text-danger">25 Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="uk-container sent">
+        <div class="uk-text-center">
+            <h1 style="padding: 35px;">Succes your Choice</h1>
+        </div>
+        <div style="padding: 35px;">
+            <div class="uk-width-expand@m expand">
+                <form class="uk-grid-small " style="padding: 50px;" uk-grid >
+                    <div class="uk-width-1-3@s">
+                        <input class="uk-input" type="text" placeholder="Course">
+                    </div>
+                    <div class="uk-width-1-3@s">
+                        <input class="uk-input" type="text" placeholder="Categorie">
+                    </div>
+                    <div class="uk-width-1-3@s">
+                        <button class="uk-button  uk-button-danger"  >Search Courses</button>
+                    </div>
+      
+                </form>
+             </div>
+
+        </div>
+        
+
+        
+       
+      
+    </div>
+    <div class="uk-container">
+        <div class="uk-text-center pad">
+            <h1>Featured Courses</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+        </div>
+        <div class="uk-container" uk-navbar>
+            
+            <div class="uk-navbar-center uk-grid">
+                <ul class="uk-grid uk-navbar-nav">
+                    <li ><a href="#">All</a></li>
+                    <li><a href="#">Finance</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Photography</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+        
+    
+    
+   <div class="uk-container uk-container-xlarge">
+    <div class="uk-child-width-1-4@m" uk-grid>
+        
+        <div>
+            <div class="uk-card uk-card-default" >
+                    
+                    <div class="uk-position-top-left corner" >
+                        <div>Price: $15</div>
+                    </div>
+
+              
+               
+                <div class="uk-card-media-top">
+
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/1.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Art & Crafts</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/2.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">IT Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/3.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Graphic Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/4.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">IT Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="uk-child-width-1-4@m" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/5.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">IT Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/6.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Socia Media</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/7.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">IT Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-position-top-left corner" >
+                    <div>Price: $15</div>
+                </div>
+
+                <div class="uk-card-media-top">
+                    <img src="https://preview.colorlib.com/theme/webuni/img/courses/8.jpg.webp" width="1800" height="1200" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">HTML 5</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+   </div>
+   <div>
+       <div class="uk-margin-top" >
+        <div class="uk-child-width-1-2@s uk-light uk-grid cs-gd" >
+            <div>
+                <div class="uk-background uk-height-expand uk-padding " style="background-color: #d82a4e;">
+                    <div class="uk-padding uk-text-center">
+                        <h1 class=" uk-text-bold">Sign up to became a teacher</h1>
+                        <p class="uk-text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+
+                    </div>
+                  
+                    <div class="uk-padding ">
+                        <div class="uk-card uk-card-default uk-card-body uk-padding">
+                            <form >
+    
+                                <div class="uk-margin">
+                                    <input class="uk-input cs-input uk-form-width-medium uk-form-large" type="text" placeholder="Your Name">
+                                </div>
+                            
+                                <div class="uk-margin">
+                                    <input class="uk-input  cs-input uk-form-width-medium uk-form-large" type="text" placeholder="Your mail">
+                                </div>
+                            
+                                <div class="uk-margin">
+                                    <input class="uk-input  cs-input uk-form-width-medium uk-form-large" type="text" placeholder="Your Phone">
+                                </div>
+                                <div class="uk-margin">
+                                    <button class="uk-button as-btn uk-button-large">Upload Course</button>
+                                    
+                                </div>
+                                <div class="uk-margin">
+                                    
+                                    <button class="uk-button uk-button-danger uk-button-large">SEarch Course</button>
+                                </div>
+                            
+                            </form>
+    
+                           
+                        </div>
+                    </div>
+                   
+                    
+                   
+                </div>
+            </div>
+            <div>
+                <div class="uk-background uk-height-expand such" style="background-image: url(https://preview.colorlib.com/theme/webuni/img/signup-bg.jpg.webp);height: 832px;" >
+                    
+                </div>
+            </div>
+        </div>
+
+       </div>
+   </div>
+   <div class="uk-margin uk-container">
+    <div>
+        <h1 class="uk-text-center uk-text-bold">
+            Join Our Community Now!
+        </h1>
+        <p class="uk-text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.
+        </p>
+        <div class="uk-margin uk-text-center">
+                                    
+            <button class="uk-button uk-button-danger uk-button-large">Register Now!</button>
+        </div>
+    </div>
+    </div>
+    <hr class="uk-hr">
+    <div class="uk-container uk-padding">
+        <div class="uk-child-width-expand@s" uk-grid>
+
+            <div>
+                <h4 class="uk-card-title uk-text-center">Contact Info</h4>
+                <ul class="uk-list uk-list-disc uk-list-muted">
+                    <li>1481 Creekside Lane
+                        Avila Beach, CA 931</li>
+                    <li>+53 345 7953 32453</li>
+                    <li>yourmail@gmail.com</li>
+                </ul>
+            </div>
+        
+            <div>
+                <h4>Engeneering</h4>
+                <ul class="uk-list  uk-list-emphasis">
+                    <li>Applied Studies</li>
+                    <li>Computer Engeneering</li>
+                    <li>Software Engeneering</li>
+                    <li>Informational Engeneering</li>
+                    <li>System Engeneering</li>
+                </ul>
+            </div>
+        
+            <div>
+                <h4>Graphic Design</h4>
+                <ul class="uk-list  uk-list-emphasis">
+                    <li>Applied Studies</li>
+                    <li>Computer Engeneering</li>
+                    <li>Software Engeneering</li>
+                    <li>Informational Engeneering</li>
+                    <li>System Engeneering</li>
+                </ul>
+            </div>
+        
+            <div>
+                <h4>Development</h4>
+                <ul class="uk-list  uk-list-emphasis">
+                    <li>Applied Studies</li>
+                    <li>Computer Engeneering</li>
+                    <li>Software Engeneering</li>
+                    <li>Informational Engeneering</li>
+                    <li>System Engeneering</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <ul class="uk-list  uk-list-emphasis">
+                    <li>Applied Studies</li>
+                    <li>Computer Engeneering</li>
+                    <li>Software Engeneering</li>
+                    <li>Informational Engeneering</li>
+                    <li>System Engeneering</li>
+                </ul>
+            </div>
+        
+        </div>
+    </div>
+    
+
+  
+
+
+
+</body>
+
+</html>
+ 
+
+
+
+
